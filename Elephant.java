@@ -6,13 +6,19 @@ public class Elephant extends Actor
     GreenfootImage[] idle = new GreenfootImage[8];
     
     // Constructor
-    
     public Elephant(){
         for(int i = 0; i < idle.length; i++){
-            idle[i] = newGreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
         }
         setImage(idle[0]);
     }
+    
+    int imageIndex = 0;
+    public void animateElephant(){
+        setImage(idleIndex);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     
     public void act()
     {
@@ -24,6 +30,8 @@ public class Elephant extends Actor
         }
         
         eat();
+        
+        animateElephant();
     }
     
     public void eat(){
