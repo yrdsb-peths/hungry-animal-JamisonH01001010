@@ -22,20 +22,26 @@ public class MyWorld extends World
         createApple();
     }
     
+    // Create a game over label
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
     }
     
+    // Increase score and set label to current score value
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
     }
     
+    // Create an apple
     public void createApple(){
         Apple apple = new Apple();
+        // Randomize the x component
         int x = Greenfoot.getRandomNumber(600);
+        // Always have the apple spawn at the highest point
         int y = 0;
+        // Add apple to the world
         addObject(apple, x, y); 
         
     }
