@@ -40,5 +40,13 @@ public class TitleScreen extends World
         label.setLocation(339,309);
         label2.setLocation(353,207);
         label.setLocation(349,305);
+        elephant.setLocation(529,116);
+        elephant.setLocation(513,82);
+        label2.setLocation(315,224);
+        label.setLocation(333,322);
+        label.setLocation(456,313);
+        label.setLocation(365,314);
+        label2.setLocation(450,241);
+        label.setLocation(324,118);
     }
 }
