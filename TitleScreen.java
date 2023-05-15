@@ -2,7 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("The Elephant", 60);
+    Label titleLabel;
+    Label startLabel;
+    Label arrowLabel;
+    Label achievementArrow;
+    Label achievements;
     public static boolean gameStart = false;
     // Constructor
     public TitleScreen()
@@ -22,6 +26,9 @@ public class TitleScreen extends World
             Greenfoot.setWorld(gameWorld);
             gameStart = true;
         }
+        if(mouseClicked(achievementArrow)){
+            
+        }
     }
     
     public static boolean getGameStart(){
@@ -36,9 +43,13 @@ public class TitleScreen extends World
     {
         Elephant elephant = new Elephant();
         addObject(elephant,300,200);
-        Label startLabel = new Label("Press <space> to start", 40);
+        startLabel = new Label("Press <space> to start", 40);
         addObject(startLabel,300,300);
-        Label arrowLabel = new Label("Use \u2190 and \u2192 to move", 40);
+        arrowLabel = new Label("Use \u2190 and \u2192 to move", 40);
         addObject(arrowLabel,300,350);
+        achievementArrow = new Label("\u2192", 80);
+        addObject(achievementArrow, 545, 200);
+        achievements = new Label("Achievements", 25);
+        addObject(achievements, 535, 225);
     }
 }
