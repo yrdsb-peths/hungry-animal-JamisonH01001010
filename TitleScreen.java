@@ -11,7 +11,7 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         // Adds title label to the title screen
-        addObject(titleLabel, getWidth()/2, 200);
+        addObject(titleLabel, 300, 75);
         prepare();
     }
     
@@ -30,23 +30,10 @@ public class TitleScreen extends World
     private void prepare()
     {
         Elephant elephant = new Elephant();
-        addObject(elephant,442,97);
-        elephant.setLocation(432,70);
-        elephant.setLocation(456,77);
-        Label label = new Label("Press <space> to start", 40);
-        addObject(label,324,285);
-        Label label2 = new Label("Use \u2190 and \u2192 to move", 40);
-        addObject(label2,306,229);
-        label.setLocation(339,309);
-        label2.setLocation(353,207);
-        label.setLocation(349,305);
-        elephant.setLocation(529,116);
-        elephant.setLocation(513,82);
-        label2.setLocation(315,224);
-        label.setLocation(333,322);
-        label.setLocation(456,313);
-        label.setLocation(365,314);
-        label2.setLocation(450,241);
-        label.setLocation(324,118);
+        addObject(elephant,300,200);
+        Label startLabel = new Label("Press <space> to start", 40);
+        addObject(startLabel,300,300);
+        Label arrowLabel = new Label("Use \u2190 and \u2192 to move", 40);
+        addObject(arrowLabel,300,350);
     }
 }
