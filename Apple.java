@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Apple extends Actor
 {
+    int speed = 1;
     public void act()
     {
         int x = getX();
-        int y = getY() + 2; // falling apple
+        int y = getY() + speed; // falling apple
         setLocation(x, y);
         // Or just setLocation(getX(), getY() + 2);
         
@@ -14,5 +15,9 @@ public class Apple extends Actor
             world.gameOver();
             world.removeObject(this); //removes apple from world
         }
+    }
+    
+    public void setSpeed(int speed){
+        this.speed = speed;
     }
 }

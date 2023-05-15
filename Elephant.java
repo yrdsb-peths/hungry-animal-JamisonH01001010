@@ -58,12 +58,15 @@ public class Elephant extends Actor
     public void act()
     {
         // Move left if left arrow key is pressed, right if right arrow key is pressed
-        if(Greenfoot.isKeyDown("left")){
-            move(-3);
-            facing = "left";
-        } else if(Greenfoot.isKeyDown("right")){
-            move(3);
-            facing = "right";
+        // Only move if user pressed space to start game
+        if(TitleScreen.getGameStart()){
+            if(Greenfoot.isKeyDown("left")){
+                move(-4);
+                facing = "left";
+            } else if(Greenfoot.isKeyDown("right")){
+                move(4);
+                facing = "right";
+            }
         }
         
         eat();

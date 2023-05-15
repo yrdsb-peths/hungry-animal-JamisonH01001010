@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label titleLabel = new Label("The Elephant", 60);
-    
+    public static boolean gameStart = false;
     // Constructor
     public TitleScreen()
     {    
@@ -20,7 +20,12 @@ public class TitleScreen extends World
         if(Greenfoot.isKeyDown("space")){
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            gameStart = true;
         }
+    }
+    
+    public static boolean getGameStart(){
+        return gameStart;
     }
     
     /**

@@ -4,6 +4,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
+    int level = 1;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,11 +33,15 @@ public class MyWorld extends World
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
+        if(score % 5 == 0){
+            level += 1;
+        }
     }
     
     // Create an apple
     public void createApple(){
         Apple apple = new Apple();
+        apple.setSpeed(level);
         // Randomize the x component
         int x = Greenfoot.getRandomNumber(600);
         // Always have the apple spawn at the highest point
