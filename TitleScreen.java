@@ -7,6 +7,7 @@ public class TitleScreen extends World
     Label arrowLabel;
     Label achievementArrow;
     Label achievements;
+    Arroww arrow = new Arroww();
     public static boolean gameStart = false;
     // Constructor
     public TitleScreen()
@@ -19,8 +20,7 @@ public class TitleScreen extends World
         prepare();
         
         // Create an arrow
-        Arrow a = new Arrow();
-        addObject(a, 530, 200);
+        addObject(arrow, 530, 200);
     }
     
     // Once "space" is pressed, start the game
