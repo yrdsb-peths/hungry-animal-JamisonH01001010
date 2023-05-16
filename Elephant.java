@@ -18,14 +18,14 @@ public class Elephant extends Actor
         // Loop through images 0 - 7
         for(int i = 0; i < idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            idleRight[i].scale(100, 100);
+            idleRight[i].scale(75, 75);
         }
         
         // Loop backwards through images 7 - 0
         for(int i = 0; i < idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(100, 100);
+            idleLeft[i].scale(75, 75);
         }
         
         animationTimer.mark();

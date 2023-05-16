@@ -17,6 +17,10 @@ public class TitleScreen extends World
         // Adds title label to the title screen
         addObject(titleLabel, 300, 75);
         prepare();
+        
+        // Create an arrow
+        Arrow a = new Arrow();
+        addObject(a, 530, 200);
     }
     
     // Once "space" is pressed, start the game
