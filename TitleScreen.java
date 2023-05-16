@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class TitleScreen extends World
 {
-    Label titleLabel;
+    Label titleLabel = new Label("The Elephant", 60);
     Label startLabel;
     Label arrowLabel;
     Label achievementArrow;
@@ -25,9 +25,6 @@ public class TitleScreen extends World
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
             gameStart = true;
-        }
-        if(mouseClicked(achievementArrow)){
-            
         }
     }
     
