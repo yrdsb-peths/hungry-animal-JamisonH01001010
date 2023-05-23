@@ -29,7 +29,7 @@ public class Achievements extends World
     }
     
     public void act(){
-        
+        completeAchievements();
     }
     
     public void completeAchievements(){
