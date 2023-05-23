@@ -72,6 +72,7 @@ public class Elephant extends Actor
         eat();
         
         animateElephant();
+        
     }
     
     public void eat(){
@@ -86,6 +87,8 @@ public class Elephant extends Actor
             world.increaseScore();
             // Play a sound effect
             elephantSound.play();
+            // Assign achievements
+            world.setAchievements();
         }
     }
 }

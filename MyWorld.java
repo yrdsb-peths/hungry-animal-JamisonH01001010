@@ -31,11 +31,11 @@ public class MyWorld extends World
     
     // Increase score and set label to current score value
     public void increaseScore(){
-        score++;
-        scoreLabel.setValue(score);
         if(score % 5 == 0){
             level += 1;
         }
+        score++;
+        scoreLabel.setValue(score);
     }
     
     // Create an apple
@@ -48,6 +48,18 @@ public class MyWorld extends World
         int y = 0;
         // Add apple to the world
         addObject(apple, x, y); 
-        
+    }
+    
+    public void setAchievements(){
+        Achievements a = new Achievements();
+        if(score >= 15){
+            a.setNov();
+        } 
+        if(score >= 20){
+            a.setExp();
+        }
+        if(score >= 25){
+            a.setMas();
+        }
     }
 }

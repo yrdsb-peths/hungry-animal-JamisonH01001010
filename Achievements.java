@@ -11,9 +11,9 @@ public class Achievements extends World
     Label appleNovice;
     Label appleExpert;
     Label appleMaster;
-    private boolean nov = true;
-    private boolean exp = true;
-    private boolean mas = true;
+    private boolean nov = false;
+    private boolean exp = false;
+    private boolean mas = false;
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
