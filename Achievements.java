@@ -26,6 +26,11 @@ public class Achievements extends World
         addObject(appleExpert, 268, 150);
         appleMaster = new Label("Master: Eat 25 apples in one run", 30);
         addObject(appleMaster, 270, 200);
+        
+        // Add back arrow
+        Arrow a = new Arrow();
+        a.mirrorHorizontally();
+        addObject(a, 300, 350);
     }
     
     public void act(){
