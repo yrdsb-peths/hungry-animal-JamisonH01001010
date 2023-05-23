@@ -8,14 +8,53 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Achievements extends World
 {
-
-    /**
-     * Constructor for objects of class Achievements.
-     * 
-     */
+    Label appleNovice;
+    Label appleExpert;
+    Label appleMaster;
+    private boolean nov = true;
+    private boolean exp = true;
+    private boolean mas = true;
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        
+        // Add achievement descriptions
+        appleNovice = new Label("Novice: Eat 15 apples in one run", 30);
+        addObject(appleNovice, 271, 100);
+        appleExpert = new Label("Expert: Eat 20 apples in one run", 30);
+        addObject(appleExpert, 268, 150);
+        appleMaster = new Label("Master: Eat 25 apples in one run", 30);
+        addObject(appleMaster, 270, 200);
+    }
+    
+    public void act(){
+        
+    }
+    
+    public void completeAchievements(){
+        if(nov){
+            Checkmark c1 = new Checkmark();
+            addObject(c1, 500, 100);
+        }
+        if(exp){
+            Checkmark c2 = new Checkmark();
+            addObject(c2, 500, 150);
+        }
+        if(mas){
+            Checkmark c3 = new Checkmark();
+            addObject(c3, 500, 200);
+        }
+    }
+    public void setNov(){
+        nov = true;
+    }
+    
+    public void setExp(){
+        exp = true;
+    }
+    
+    public void setMas(){
+        mas = true;
     }
 }

@@ -5,9 +5,9 @@ public class TitleScreen extends World
     Label titleLabel = new Label("The Elephant", 60);
     Label startLabel;
     Label arrowLabel;
-    Label achievementArrow;
     Label achievements;
     public static boolean gameStart = false;
+    Arrow a = new Arrow();
     // Constructor
     public TitleScreen()
     {    
@@ -18,20 +18,27 @@ public class TitleScreen extends World
         addObject(titleLabel, 300, 75);
         prepare();
         
-        // Create an arrow
-        Arrow a = new Arrow();
+        // Add arrow
         addObject(a, 530, 200);
     }
     
     // Once "space" is pressed, start the game
     public void act(){
+        // Changing to game world
         if(Greenfoot.isKeyDown("space")){
+            // Change to game world by creating a world object
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
             gameStart = true;
         }
+        // Changing to achievement world
+        if(Greenfoot.mouseClicked(a)){
+            Achievements achWorld = new Achievements();
+            Greenfoot.setWorld(achWorld);
+        }
     }
     
+    // Return if game has started
     public static boolean getGameStart(){
         return gameStart;
     }
@@ -43,14 +50,12 @@ public class TitleScreen extends World
     private void prepare()
     {
         Elephant elephant = new Elephant();
-        addObject(elephant,300,200);
+        addObject(elephant, 300, 200);
         startLabel = new Label("Press <space> to start", 40);
-        addObject(startLabel,300,300);
+        addObject(startLabel, 300, 300);
         arrowLabel = new Label("Use \u2190 and \u2192 to move", 40);
-        addObject(arrowLabel,300,350);
-        achievementArrow = new Label("\u2192", 80);
-        addObject(achievementArrow, 545, 200);
+        addObject(arrowLabel,300, 350);
         achievements = new Label("Achievements", 25);
-        addObject(achievements, 535, 225);
+        addObject(achievements, 530, 225);
     }
 }
