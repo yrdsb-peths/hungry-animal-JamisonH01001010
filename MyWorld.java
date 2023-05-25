@@ -27,6 +27,10 @@ public class MyWorld extends World
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        Button b = new Button();
+        addObject(b, 300, 300);
+        Label returnToHome = new Label("Return to Home", 30);
+        addObject(returnToHome, 300, 300);
     }
     
     // Increase score and set label to current score value
