@@ -17,6 +17,7 @@ public class Apple extends Actor
             world.gameOver();
             world.removeObject(this); //removes apple from world
             world.setAchievements();
+            TitleScreen.setGameStart(false);
         }        
     }
     

@@ -46,6 +46,10 @@ public class TitleScreen extends World
         return gameStart;
     }
     
+    public static void setGameStart(boolean a){
+        gameStart = a;
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

@@ -35,8 +35,6 @@ public class MyWorld extends World
             TitleScreen titleWorld = new TitleScreen();
             Greenfoot.setWorld(titleWorld);
         }
-        
-        Achievements.setNov(true);
     }
     
     // Create a game over label
