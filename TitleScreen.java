@@ -6,8 +6,8 @@ public class TitleScreen extends World
     Label startLabel;
     Label arrowLabel;
     Label achievements;
+    Arrow a1 = new Arrow();
     public static boolean gameStart = false;
-    Arrow a = new Arrow();
     // Constructor
     public TitleScreen()
     {    
@@ -19,7 +19,8 @@ public class TitleScreen extends World
         prepare();
         
         // Add arrow
-        addObject(a, 530, 200);
+        Arrow.setOrientation(false);
+        addObject(a1, 530, 200);
     }
     
     // Once "space" is pressed, start the game
@@ -32,7 +33,7 @@ public class TitleScreen extends World
             gameStart = true;
         }
         // Changing to achievement world
-        if(Greenfoot.mouseClicked(a)){
+        if(Greenfoot.mouseClicked(a1)){
             Achievements achWorld = new Achievements();
             Greenfoot.setWorld(achWorld);
         }

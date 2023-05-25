@@ -28,9 +28,9 @@ public class Achievements extends World
         addObject(appleMaster, 270, 200);
         
         // Add back arrow
-        Arrow a = new Arrow();
-        a.mirrorHorizontally();
-        addObject(a, 300, 350);
+        Arrow a2 = new Arrow();
+        Arrow.setOrientation(false);
+        addObject(a2, 300, 350);
     }
     
     public void act(){
