@@ -47,10 +47,10 @@ public class MyWorld extends World
     
     // Increase score and set label to current score value
     public void increaseScore(){
+        score++;
         if(score % 5 == 0){
             level += 1;
         }
-        score++;
         scoreLabel.setValue(score);
     }
     
