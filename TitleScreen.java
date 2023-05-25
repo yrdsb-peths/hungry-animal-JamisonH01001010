@@ -57,7 +57,7 @@ public class TitleScreen extends World
         startLabel = new Label("Press <space> to start", 40);
         addObject(startLabel, 300, 300);
         arrowLabel = new Label("Use \u2190 and \u2192 to move", 40);
-        addObject(arrowLabel,300, 350);
+        addObject(arrowLabel, 300, 350);
         achievements = new Label("Achievements", 25);
         addObject(achievements, 530, 225);
     }

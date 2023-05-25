@@ -21,7 +21,6 @@ public class MyWorld extends World
         
         // Create an Apple
         createApple();
-        
     }
     
     public void act(){
@@ -36,6 +35,8 @@ public class MyWorld extends World
             TitleScreen titleWorld = new TitleScreen();
             Greenfoot.setWorld(titleWorld);
         }
+        
+        Achievements.setNov(true);
     }
     
     // Create a game over label
@@ -68,13 +69,13 @@ public class MyWorld extends World
     public void setAchievements(){
         Achievements a = new Achievements();
         if(score >= 15){
-            a.setNov();
+            a.setNov(true);
         } 
         if(score >= 20){
-            a.setExp();
+            a.setExp(true);
         }
         if(score >= 25){
-            a.setMas();
+            a.setMas(true);
         }
     }
 }

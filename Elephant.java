@@ -19,14 +19,14 @@ public class Elephant extends Actor
         // Loop through images 0 - 7
         for(int i = 0; i < idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            idleRight[i].scale(75, 75);
+            idleRight[i].scale(100, 100);
         }
         
         // Loop backwards through images 7 - 0
         for(int i = 0; i < idleLeft.length; i++){
             idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(75, 75);
+            idleLeft[i].scale(100, 100);
         }
         
         animationTimer.mark();
@@ -62,10 +62,10 @@ public class Elephant extends Actor
         // Only move if user pressed space to start game
         if(TitleScreen.getGameStart()){
             if(Greenfoot.isKeyDown("left")){
-                move(-4);
+                move(-5);
                 facing = "left";
             } else if(Greenfoot.isKeyDown("right")){
-                move(4);
+                move(5);
                 facing = "right";
             }
         }
@@ -73,7 +73,6 @@ public class Elephant extends Actor
         eat();
         
         animateElephant();
-        
     }
     
     public void eat(){

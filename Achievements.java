@@ -12,9 +12,9 @@ public class Achievements extends World
     Label appleExpert;
     Label appleMaster;
     Label titleScreen;
-    private boolean nov = false;
-    private boolean exp = false;
-    private boolean mas = false;
+    private static boolean nov = false;
+    private static boolean exp = false;
+    private static boolean mas = false;
     Arrow a2 = new Arrow();
     public Achievements()
     {    
@@ -62,15 +62,15 @@ public class Achievements extends World
             addObject(c3, 500, 200);
         }
     }
-    public void setNov(){
-        nov = true;
+    public static void setNov(boolean a){
+        nov = a;
     }
     
-    public void setExp(){
-        exp = true;
+    public static void setExp(boolean a){
+        exp = a;
     }
     
-    public void setMas(){
-        mas = true;
+    public static void setMas(boolean a){
+        mas = a;
     }
 }
