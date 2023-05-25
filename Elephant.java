@@ -13,6 +13,7 @@ public class Elephant extends Actor
     
     SimpleTimer animationTimer = new SimpleTimer();
     
+    
     // Constructor
     public Elephant(){
         // Loop through images 0 - 7

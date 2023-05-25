@@ -5,6 +5,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    Button b = new Button();
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,14 +24,24 @@ public class MyWorld extends World
         
     }
     
+    public void act(){
+        if(Apple.getGameOver()){
+            addObject(b, 300, 300);
+            // Label can't be too big or else unable to "click" button
+            Label returnToHome = new Label("Return to Home", 25); 
+            addObject(returnToHome, 300, 300);
+        }
+        
+        if(Greenfoot.mouseClicked(b)){
+            TitleScreen titleWorld = new TitleScreen();
+            Greenfoot.setWorld(titleWorld);
+        }
+    }
+    
     // Create a game over label
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
-        Button b = new Button();
-        addObject(b, 300, 300);
-        Label returnToHome = new Label("Return to Home", 30);
-        addObject(returnToHome, 300, 300);
     }
     
     // Increase score and set label to current score value
