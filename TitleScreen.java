@@ -21,6 +21,8 @@ public class TitleScreen extends World
         // Add arrow
         Arrow.setOrientation(false);
         addObject(a1, 530, 200);
+        
+        Apple.setGameOver(false);
     }
     
     // Once "space" is pressed, start the game

@@ -23,6 +23,10 @@ public class Apple extends Actor
         return gameOver;
     }
     
+    public static void setGameOver(boolean a){
+        gameOver = a;
+    }
+    
     public void setSpeed(int speed){
         this.speed = speed;
     }
