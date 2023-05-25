@@ -11,9 +11,11 @@ public class Achievements extends World
     Label appleNovice;
     Label appleExpert;
     Label appleMaster;
+    Label titleScreen;
     private boolean nov = false;
     private boolean exp = false;
     private boolean mas = false;
+    Arrow a2 = new Arrow();
     public Achievements()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -28,13 +30,22 @@ public class Achievements extends World
         addObject(appleMaster, 270, 200);
         
         // Add back arrow
-        Arrow a2 = new Arrow();
-        Arrow.setOrientation(false);
-        addObject(a2, 300, 350);
+        Arrow.setOrientation(true);
+        addObject(a2, 300, 325);
+        
+        // Add arrow text
+        titleScreen = new Label("Title Screen", 25);
+        addObject(titleScreen, 300, 305);
     }
     
     public void act(){
         completeAchievements();
+        
+        // Changing to TitleScreen world
+        if(Greenfoot.mouseClicked(a2)){
+            TitleScreen titleWorld = new TitleScreen();
+            Greenfoot.setWorld(titleWorld);
+        }
     }
     
     public void completeAchievements(){
