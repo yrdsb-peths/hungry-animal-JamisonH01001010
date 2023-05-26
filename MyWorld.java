@@ -64,6 +64,7 @@ public class MyWorld extends World
         addObject(apple, x, y); 
     }
     
+    //Sets achievements 
     public void setAchievements(){
         Achievements a = new Achievements();
         if(score >= 15){
