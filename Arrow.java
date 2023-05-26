@@ -19,6 +19,8 @@ public class Arrow extends Actor
         }
         setImage(arrow);
     }
+    
+    //Sets Orientation
     public static void setOrientation(boolean a)
     {
         orientation = a;
