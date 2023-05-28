@@ -1,8 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Apple extends Actor
 {
+    // Track speed
     int speed = 1;
+    
+    // Track game over
     public static boolean gameOver = false;
+    
     public void act()
     {
         int x = getX();
@@ -21,14 +25,23 @@ public class Apple extends Actor
         }        
     }
     
+    /**
+     * Return if game is over
+     */
     public static boolean getGameOver(){
         return gameOver;
     }
     
+    /**
+     * Set if game is over
+     */
     public static void setGameOver(boolean a){
         gameOver = a;
     }
     
+    /**
+     * Set how fast the apple falls
+     */
     public void setSpeed(int speed){
         this.speed = speed;
     }

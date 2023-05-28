@@ -8,13 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Achievements extends World
 {
+    // Create Labels
     Label appleNovice;
     Label appleExpert;
     Label appleMaster;
     Label titleScreen;
+    
+    // Set inital achievement state
     private static boolean nov = false;
     private static boolean exp = false;
     private static boolean mas = false;
+    
+    // Create Arrow
     Arrow a2 = new Arrow();
     public Achievements()
     {    
@@ -48,6 +53,9 @@ public class Achievements extends World
         }
     }
     
+    /**
+     * Add a checkmark if a certain achievement criteria is met
+     */
     public void completeAchievements(){
         if(nov){
             Checkmark c1 = new Checkmark();
@@ -62,14 +70,24 @@ public class Achievements extends World
             addObject(c3, 500, 200);
         }
     }
+    
+    /**
+     * Sets value of Novice achievement
+     */
     public static void setNov(boolean a){
         nov = a;
     }
     
+    /**
+     * Sets value of Expert achievement
+     */
     public static void setExp(boolean a){
         exp = a;
     }
     
+    /**
+     * Sets value of Master achievement
+     */
     public static void setMas(boolean a){
         mas = a;
     }

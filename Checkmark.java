@@ -13,7 +13,4 @@ public class Checkmark extends Actor
         checkmark.scale(30, 30);
         setImage(checkmark);
     }
-    public void act()
-    {
-    }
 }

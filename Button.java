@@ -13,8 +13,4 @@ public class Button extends Actor
         button.scale(300, 100);
         setImage(button);
     }
-    public void act()
-    {
-        // Add your action code here.
-    }
 }

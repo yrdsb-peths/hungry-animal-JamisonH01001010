@@ -9,12 +9,14 @@ public class Elephant extends Actor
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     GreenfootImage[] idleRight = new GreenfootImage[8];
     
+    // Track elephant facing direction
     String facing = "right";
     
+    // Timer
     SimpleTimer animationTimer = new SimpleTimer();
     
+    int imageIndex = 0;
     
-    // Constructor
     public Elephant(){
         // Loop through images 0 - 7
         for(int i = 0; i < idleRight.length; i++){
@@ -29,15 +31,14 @@ public class Elephant extends Actor
             idleLeft[i].scale(100, 100);
         }
         
+        // Mark start of animation
         animationTimer.mark();
         
         // Inital elephant image
         setImage(idleRight[0]);
     }
     
-    int imageIndex = 0;
     public void animateElephant(){
-        
         // 0.1s delay
         if(animationTimer.millisElapsed() < 100){
             return;
@@ -45,7 +46,7 @@ public class Elephant extends Actor
         animationTimer.mark();
         
         // Depending on elephant's facing direction, implement coressponding animation
-        // * Recheck video
+        // Modulus part: To not cause array out of bounds error
         if(facing.equals("right")){
             setImage(idleRight[imageIndex]);
             imageIndex = (imageIndex + 1) % idleRight.length;
@@ -58,7 +59,8 @@ public class Elephant extends Actor
     
     public void act()
     {
-        // Move left if left arrow key is pressed, right if right arrow key is pressed
+        // Move left if left arrow key is pressed
+        // Right if right arrow key is pressed
         // Only move if user pressed space to start game
         if(TitleScreen.getGameStart()){
             if(Greenfoot.isKeyDown("left")){

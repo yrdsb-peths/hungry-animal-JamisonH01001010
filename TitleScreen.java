@@ -2,13 +2,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class TitleScreen extends World
 {
+    // Create Labels
     Label titleLabel = new Label("The Elephant", 60);
     Label startLabel;
     Label arrowLabel;
     Label achievements;
+    
+    // Create Arrow
     Arrow a1 = new Arrow();
+    
+    // Tracking game start
     public static boolean gameStart = false;
-    // Constructor
+    
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,12 +27,12 @@ public class TitleScreen extends World
         Arrow.setOrientation(false);
         addObject(a1, 530, 200);
         
+        // For if the game is playing again, to keep track of its restart
         Apple.setGameOver(false);
     }
     
-    // Once "space" is pressed, start the game
     public void act(){
-        // Changing to game world
+        // // Once "space" is pressed, start the game
         if(Greenfoot.isKeyDown("space")){
             // Change to game world by creating a world object
             MyWorld gameWorld = new MyWorld();
@@ -41,11 +46,16 @@ public class TitleScreen extends World
         }
     }
     
-    // Return if game has started
+    /**
+     * Return if game has started
+     */ 
     public static boolean getGameStart(){
         return gameStart;
     }
     
+    /**
+     * Set if game has started
+     */
     public static void setGameStart(boolean a){
         gameStart = a;
     }

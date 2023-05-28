@@ -2,9 +2,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
+    // Tracking user score
     public int score = 0;
     Label scoreLabel;
+    
+    // Tracking current level
     int level = 1;
+    
+    // Create button
     Button b = new Button();
     public MyWorld()
     {    
@@ -24,6 +29,7 @@ public class MyWorld extends World
     }
     
     public void act(){
+        // If the apple falls past elephant, add a return to home label
         if(Apple.getGameOver()){
             addObject(b, 300, 300);
             // Label can't be too big or else unable to "click" button
@@ -31,19 +37,24 @@ public class MyWorld extends World
             addObject(returnToHome, 300, 300);
         }
         
+        // If user clicked on the button bring them back to the title screen
         if(Greenfoot.mouseClicked(b)){
             TitleScreen titleWorld = new TitleScreen();
             Greenfoot.setWorld(titleWorld);
         }
     }
     
-    // Create a game over label
+    /**
+     * Create a game over label
+     */ 
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
     }
     
-    // Increase score and set label to current score value
+    /**
+     * Increase score and set label to current score value
+     */
     public void increaseScore(){
         score++;
         if(score % 5 == 0){
@@ -52,7 +63,9 @@ public class MyWorld extends World
         scoreLabel.setValue(score);
     }
     
-    // Create an apple
+    /**
+     * Create an apple with random x value at the top of the screen
+     */
     public void createApple(){
         Apple apple = new Apple();
         apple.setSpeed(level);
@@ -64,6 +77,12 @@ public class MyWorld extends World
         addObject(apple, x, y); 
     }
     
+    /**
+     * Determine achievement completion based on score
+     * If score is 15, Novice completed
+     * If score is 20, Expert completed
+     * If score is 25, Master completed
+     */
     public void setAchievements(){
         Achievements a = new Achievements();
         if(score >= 15){
